@@ -1,0 +1,10 @@
+{
+  "description": "Hash table and linked list implementation of Set interface with predictable iteration order.",
+  "since": "1.4",
+  "characteristics": [
+    "Maintains insertion order",
+    "Nearly as fast as HashSet",
+    "Slightly higher memory usage",
+    "Not synchronized"
+  ]
+}

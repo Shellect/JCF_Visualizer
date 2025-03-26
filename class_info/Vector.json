@@ -1,0 +1,10 @@
+{
+  "description": "Legacy synchronized resizable-array implementation of the List interface. Similar to ArrayList but thread-safe.",
+  "since": "1.0",
+  "characteristics": [
+    "Thread-safe",
+    "Dynamic resizing",
+    "Legacy class",
+    "Synchronized methods"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Resizable-array implementation of the Deque interface. More efficient than Stack when used as a stack.",
+  "since": "1.6",
+  "characteristics": [
+    "No capacity restrictions",
+    "Faster than Stack and LinkedList",
+    "Not thread-safe",
+    "Null elements not permitted"
+  ]
+}

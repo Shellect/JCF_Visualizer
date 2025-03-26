@@ -1,0 +1,10 @@
+{
+  "description": "Hash table based Map with weak keys. Entry is automatically removed when its key is no longer referenced.",
+  "since": "1.2",
+  "characteristics": [
+    "Weak references to keys",
+    "Useful for caches",
+    "Not thread-safe",
+    "Permits null keys and values"
+  ]
+}

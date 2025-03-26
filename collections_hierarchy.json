@@ -1,0 +1,195 @@
+{
+  "groups": [
+    {
+      "name": "Collection Framework",
+      "x": 100,
+      "y": 30,
+      "color": "#C8E6C9"
+    },
+    {
+      "name": "Map Framework",
+      "x": 1000,
+      "y": 30,
+      "color": "#BBDEFB"
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "Iterable<T>",
+      "group": "Collection Framework",
+      "x": 400,
+      "y": 100,
+      "parents": []
+    },
+    {
+      "name": "Collection<E>",
+      "group": "Collection Framework",
+      "x": 400,
+      "y": 200,
+      "parents": ["Iterable<T>"]
+    },
+    {
+      "name": "List<E>",
+      "group": "Collection Framework",
+      "x": 200,
+      "y": 320,
+      "parents": ["Collection<E>"]
+    },
+    {
+      "name": "Set<E>",
+      "group": "Collection Framework",
+      "x": 400,
+      "y": 320,
+      "parents": ["Collection<E>"]
+    },
+    {
+      "name": "Queue<E>",
+      "group": "Collection Framework",
+      "x": 600,
+      "y": 320,
+      "parents": ["Collection<E>"]
+    },
+    {
+      "name": "Deque<E>",
+      "group": "Collection Framework",
+      "x": 600,
+      "y": 440,
+      "parents": ["Queue<E>"]
+    },
+    {
+      "name": "SortedSet<E>",
+      "group": "Collection Framework",
+      "x": 400,
+      "y": 440,
+      "parents": ["Set<E>"]
+    },
+    {
+      "name": "NavigableSet<E>",
+      "group": "Collection Framework",
+      "x": 400,
+      "y": 560,
+      "parents": ["SortedSet<E>"]
+    },
+    {
+      "name": "Map<K,V>",
+      "group": "Map Framework",
+      "x": 1000,
+      "y": 100,
+      "parents": []
+    },
+    {
+      "name": "SortedMap<K,V>",
+      "group": "Map Framework",
+      "x": 1000,
+      "y": 200,
+      "parents": ["Map<K,V>"]
+    },
+    {
+      "name": "NavigableMap<K,V>",
+      "group": "Map Framework",
+      "x": 1000,
+      "y": 320,
+      "parents": ["SortedMap<K,V>"]
+    }
+  ],
+  "implementations": [
+    {
+      "name": "ArrayList<E>",
+      "group": "Collection Framework",
+      "x": 100,
+      "y": 400,
+      "parent": "List<E>"
+    },
+    {
+      "name": "LinkedList<E>",
+      "group": "Collection Framework",
+      "x": 100,
+      "y": 480,
+      "parent": "List<E>"
+    },
+    {
+      "name": "Vector<E>",
+      "group": "Collection Framework",
+      "x": 100,
+      "y": 560,
+      "parent": "List<E>"
+    },
+    {
+      "name": "Stack<E>",
+      "group": "Collection Framework",
+      "x": 50,
+      "y": 640,
+      "parent": "Vector<E>"
+    },
+    {
+      "name": "HashSet<E>",
+      "group": "Collection Framework",
+      "x": 400,
+      "y": 640,
+      "parent": "Set<E>"
+    },
+    {
+      "name": "LinkedHashSet<E>",
+      "group": "Collection Framework",
+      "x": 400,
+      "y": 720,
+      "parent": "Set<E>"
+    },
+    {
+      "name": "TreeSet<E>",
+      "group": "Collection Framework",
+      "x": 400,
+      "y": 800,
+      "parent": "NavigableSet<E>"
+    },
+    {
+      "name": "PriorityQueue<E>",
+      "group": "Collection Framework",
+      "x": 600,
+      "y": 520,
+      "parent": "Queue<E>"
+    },
+    {
+      "name": "ArrayDeque<E>",
+      "group": "Collection Framework",
+      "x": 600,
+      "y": 600,
+      "parent": "Deque<E>"
+    },
+    {
+      "name": "HashMap<K,V>",
+      "group": "Map Framework",
+      "x": 900,
+      "y": 400,
+      "parent": "Map<K,V>"
+    },
+    {
+      "name": "LinkedHashMap<K,V>",
+      "group": "Map Framework",
+      "x": 900,
+      "y": 480,
+      "parent": "Map<K,V>"
+    },
+    {
+      "name": "Hashtable<K,V>",
+      "group": "Map Framework",
+      "x": 900,
+      "y": 560,
+      "parent": "Map<K,V>"
+    },
+    {
+      "name": "TreeMap<K,V>",
+      "group": "Map Framework",
+      "x": 1000,
+      "y": 400,
+      "parent": "NavigableMap<K,V>"
+    },
+    {
+      "name": "WeakHashMap<K,V>",
+      "group": "Map Framework",
+      "x": 900,
+      "y": 640,
+      "parent": "Map<K,V>"
+    }
+  ]
+}

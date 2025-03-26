@@ -1,0 +1,10 @@
+{
+  "description": "Resizable-array implementation of the List interface. Implements all optional list operations.",
+  "since": "1.2",
+  "characteristics": [
+    "Dynamic resizing",
+    "Fast random access",
+    "Slow insertions/deletions in middle",
+    "Not synchronized"
+  ]
+}

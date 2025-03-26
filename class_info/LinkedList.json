@@ -1,0 +1,10 @@
+{
+  "description": "Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations.",
+  "since": "1.2",
+  "characteristics": [
+    "Good for frequent insertions/deletions",
+    "Implements both List and Deque",
+    "Slow random access",
+    "Not synchronized"
+  ]
+}

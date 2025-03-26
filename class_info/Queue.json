@@ -1,0 +1,9 @@
+{
+  "description": "A collection designed for holding elements prior to processing. Typically orders elements in FIFO manner.",
+  "since": "1.5",
+  "characteristics": [
+    "FIFO ordering typically",
+    "Insertion at end, removal at head",
+    "Additional operations for bounded queues"
+  ]
+}

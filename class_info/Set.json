@@ -1,0 +1,9 @@
+{
+  "description": "A collection that contains no duplicate elements. Models the mathematical set abstraction.",
+  "since": "1.2",
+  "characteristics": [
+    "No duplicate elements",
+    "At most one null element",
+    "Mathematical set operations"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "description": "A SortedMap extended with navigation methods returning the closest matches for given search targets.",
+  "since": "1.6",
+  "characteristics": [
+    "Extends SortedMap",
+    "Closest-match navigation methods",
+    "Can be accessed in descending order"
+  ]
+}

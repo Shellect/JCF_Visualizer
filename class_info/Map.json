@@ -1,0 +1,10 @@
+{
+  "description": "An object that maps keys to values. Cannot contain duplicate keys; each key maps to at most one value.",
+  "since": "1.2",
+  "characteristics": [
+    "Key-value mappings",
+    "No duplicate keys",
+    "Basic operations: put, get, remove",
+    "Three collection views"
+  ]
+}

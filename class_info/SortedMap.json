@@ -1,0 +1,9 @@
+{
+  "description": "A Map that maintains its entries in ascending order according to the keys' natural ordering or a Comparator.",
+  "since": "1.2",
+  "characteristics": [
+    "Entries automatically sorted by key",
+    "Range-view operations",
+    "Endpoint access methods"
+  ]
+}

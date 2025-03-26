@@ -1,0 +1,10 @@
+{
+  "description": "An ordered collection (sequence). Provides precise control over where each element is inserted and accessed by integer index.",
+  "since": "1.2",
+  "characteristics": [
+    "Ordered collection",
+    "Allows duplicates",
+    "Positional access",
+    "Range-view operations"
+  ]
+}

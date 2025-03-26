@@ -1,0 +1,10 @@
+{
+  "description": "Hash table and linked list implementation of Map with predictable iteration order (insertion-order by default).",
+  "since": "1.4",
+  "characteristics": [
+    "Maintains insertion order",
+    "Nearly as fast as HashMap",
+    "Can be configured for access-order",
+    "Not synchronized"
+  ]
+}

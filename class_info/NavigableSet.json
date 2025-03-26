@@ -1,0 +1,9 @@
+{
+  "description": "A SortedSet extended with navigation methods reporting closest matches for given search targets.",
+  "since": "1.6",
+  "characteristics": [
+    "Extends SortedSet",
+    "Closest-match navigation methods",
+    "Can be accessed in descending order"
+  ]
+}

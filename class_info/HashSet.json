@@ -1,0 +1,10 @@
+{
+  "description": "Hash table based implementation of the Set interface. Uses HashMap internally to store elements.",
+  "since": "1.2",
+  "characteristics": [
+    "Constant-time basic operations",
+    "No ordering guarantees",
+    "Permits null element",
+    "Not synchronized"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Red-Black tree based NavigableMap implementation. Sorted according to natural ordering or Comparator.",
+  "since": "1.2",
+  "characteristics": [
+    "Keys automatically sorted",
+    "Log(n) time for basic operations",
+    "Implements NavigableMap",
+    "Not synchronized"
+  ]
+}

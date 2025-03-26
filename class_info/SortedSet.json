@@ -1,0 +1,9 @@
+{
+  "description": "A Set that maintains its elements in ascending order according to natural ordering or a Comparator.",
+  "since": "1.2",
+  "characteristics": [
+    "Elements automatically sorted",
+    "Range-view operations",
+    "Endpoint access methods"
+  ]
+}

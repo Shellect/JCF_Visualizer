@@ -1,0 +1,10 @@
+{
+  "description": "Red-Black tree based NavigableSet implementation. Elements are ordered using natural ordering or Comparator.",
+  "since": "1.2",
+  "characteristics": [
+    "Elements automatically sorted",
+    "Log(n) time for basic operations",
+    "Implements NavigableSet",
+    "Not synchronized"
+  ]
+}

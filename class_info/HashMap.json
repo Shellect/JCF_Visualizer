@@ -1,0 +1,10 @@
+{
+  "description": "Hash table based implementation of the Map interface. Provides constant-time performance for basic operations.",
+  "since": "1.2",
+  "characteristics": [
+    "Key-value storage",
+    "Permits null values and null key",
+    "No ordering guarantees",
+    "Not synchronized"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Legacy LIFO stack implementation extending Vector. Provides push, pop and peek operations.",
+  "since": "1.0",
+  "characteristics": [
+    "LIFO (Last-In-First-Out) structure",
+    "Extends Vector",
+    "Legacy class",
+    "Better alternatives exist (Deque)"
+  ]
+}

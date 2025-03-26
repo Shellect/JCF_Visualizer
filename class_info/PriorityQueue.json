@@ -1,0 +1,10 @@
+{
+  "description": "Unbounded priority queue based on a priority heap. Orders elements according to natural ordering or Comparator.",
+  "since": "1.5",
+  "characteristics": [
+    "Orders elements by priority",
+    "No capacity restrictions",
+    "Not thread-safe",
+    "Null elements not permitted"
+  ]
+}
