@@ -1,9 +1,11 @@
 {
-  "description": "A SortedMap extended with navigation methods returning the closest matches for given search targets.",
+  "description": "Расширение SortedMap с методами навигации, возвращающими ближайшие совпадения для заданных ключей поиска. Позволяет обходить элементы в обратном порядке.",
   "since": "1.6",
   "characteristics": [
-    "Extends SortedMap",
-    "Closest-match navigation methods",
-    "Can be accessed in descending order"
-  ]
+    "Наследует все возможности SortedMap",
+    "Добавляет методы для поиска ближайших ключей",
+    "Позволяет обходить отображение в обратном порядке",
+    "Поддерживает обрезку (trimming) отображения"
+  ],
+  "usage": "Используется для сложных операций поиска в отсортированных ассоциативных массивах. Основная реализация - TreeMap."
 }

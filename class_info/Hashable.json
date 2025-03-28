@@ -1,10 +1,13 @@
 {
-  "description": "Legacy synchronized hash table implementation of Map interface. Does not permit null keys or values.",
+  "description": "Устаревшая синхронизированная реализация ассоциативного массива. В новых разработках рекомендуется использовать HashMap или ConcurrentHashMap.",
   "since": "1.0",
   "characteristics": [
-    "Thread-safe",
-    "Legacy class",
-    "Synchronized methods",
-    "Doesn't permit nulls"
-  ]
+    "Синхронизирована (потокобезопасна)",
+    "Не разрешает null ключи или значения",
+    "Устаревший класс (legacy)",
+    "Медленнее HashMap из-за синхронизации",
+    "Использует устаревший метод Enumeration"
+  ],
+  "performance": "Медленнее HashMap из-за накладных расходов на синхронизацию.",
+  "usage": "Не рекомендуется для новых проектов. Используйте ConcurrentHashMap для потокобезопасности или Collections.synchronizedMap() для синхронизации HashMap."
 }

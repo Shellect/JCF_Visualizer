@@ -2,7 +2,7 @@
   "groups": [
     {
       "name": "Collection Framework",
-      "x": 100,
+      "x": 390,
       "y": 30,
       "color": "#C8E6C9"
     },
@@ -31,7 +31,7 @@
     {
       "name": "List<E>",
       "group": "Collection Framework",
-      "x": 200,
+      "x": 105,
       "y": 320,
       "parents": ["Collection<E>"]
     },
@@ -45,29 +45,29 @@
     {
       "name": "Queue<E>",
       "group": "Collection Framework",
-      "x": 600,
+      "x": 650,
       "y": 320,
       "parents": ["Collection<E>"]
     },
     {
       "name": "Deque<E>",
       "group": "Collection Framework",
-      "x": 600,
+      "x": 650,
       "y": 440,
       "parents": ["Queue<E>"]
     },
     {
       "name": "SortedSet<E>",
       "group": "Collection Framework",
-      "x": 400,
-      "y": 440,
+      "x": 300,
+      "y": 400,
       "parents": ["Set<E>"]
     },
     {
       "name": "NavigableSet<E>",
       "group": "Collection Framework",
-      "x": 400,
-      "y": 560,
+      "x": 300,
+      "y": 500,
       "parents": ["SortedSet<E>"]
     },
     {
@@ -96,64 +96,64 @@
     {
       "name": "ArrayList<E>",
       "group": "Collection Framework",
-      "x": 100,
+      "x": 10,
       "y": 400,
       "parent": "List<E>"
     },
     {
       "name": "LinkedList<E>",
       "group": "Collection Framework",
-      "x": 100,
-      "y": 480,
+      "x": 5,
+      "y": 600,
       "parent": "List<E>"
     },
     {
       "name": "Vector<E>",
       "group": "Collection Framework",
-      "x": 100,
-      "y": 560,
+      "x": 200,
+      "y": 640,
       "parent": "List<E>"
     },
     {
       "name": "Stack<E>",
       "group": "Collection Framework",
-      "x": 50,
-      "y": 640,
+      "x": 200,
+      "y": 720,
       "parent": "Vector<E>"
     },
     {
       "name": "HashSet<E>",
       "group": "Collection Framework",
-      "x": 400,
-      "y": 640,
+      "x": 450,
+      "y": 440,
       "parent": "Set<E>"
     },
     {
       "name": "LinkedHashSet<E>",
       "group": "Collection Framework",
-      "x": 400,
-      "y": 720,
+      "x": 500,
+      "y": 400,
       "parent": "Set<E>"
     },
     {
       "name": "TreeSet<E>",
       "group": "Collection Framework",
-      "x": 400,
-      "y": 800,
+      "x": 300,
+      "y": 600,
       "parent": "NavigableSet<E>"
     },
     {
       "name": "PriorityQueue<E>",
       "group": "Collection Framework",
-      "x": 600,
-      "y": 520,
+      "x": 650,
+      "y": 720,
       "parent": "Queue<E>"
     },
     {
       "name": "ArrayDeque<E>",
       "group": "Collection Framework",
-      "x": 600,
-      "y": 600,
+      "x": 650,
+      "y": 640,
       "parent": "Deque<E>"
     },
     {

@@ -1,10 +1,13 @@
 {
-  "description": "Hash table based implementation of the Map interface. Provides constant-time performance for basic operations.",
+  "description": "Реализация ассоциативного массива на основе хэш-таблицы. Обеспечивает постоянное время выполнения базовых операций (get, put) при условии хорошего распределения хэшей.",
   "since": "1.2",
   "characteristics": [
-    "Key-value storage",
-    "Permits null values and null key",
-    "No ordering guarantees",
-    "Not synchronized"
-  ]
+    "Быстрые операции (O(1)) при хорошем хэшировании",
+    "Разрешает один null ключ и множество null значений",
+    "Не гарантирует порядок элементов",
+    "Автоматически увеличивает capacity при необходимости",
+    "Не синхронизирован"
+  ],
+  "performance": "Высокая производительность для операций put/get при правильном hashCode().",
+  "usage": "Стандартный выбор для реализации Map, когда порядок элементов не важен. Широко используется для кэширования, индексации."
 }

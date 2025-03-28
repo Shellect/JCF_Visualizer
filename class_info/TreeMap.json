@@ -1,10 +1,13 @@
 {
-  "description": "Red-Black tree based NavigableMap implementation. Sorted according to natural ordering or Comparator.",
+  "description": "Реализация Map на основе красно-черного дерева. Хранит элементы отсортированными по ключам (естественный порядок или Comparator). Обеспечивает гарантированное log(n) время выполнения основных операций.",
   "since": "1.2",
   "characteristics": [
-    "Keys automatically sorted",
-    "Log(n) time for basic operations",
-    "Implements NavigableMap",
-    "Not synchronized"
-  ]
+    "Элементы автоматически сортируются по ключам",
+    "Поддерживает операции с диапазонами",
+    "Медленнее HashMap (O(log n) против O(1))",
+    "Не разрешает null ключи (если используется natural ordering)",
+    "Реализует NavigableMap"
+  ],
+  "performance": "Медленнее HashMap, но предоставляет сортировку и дополнительные навигационные методы.",
+  "usage": "Используется, когда требуется сортировка элементов по ключам или работа с диапазонами ключей."
 }

@@ -1,9 +1,11 @@
 {
-  "description": "A Map that maintains its entries in ascending order according to the keys' natural ordering or a Comparator.",
+  "description": "Расширение интерфейса Map, поддерживающее ключи в отсортированном порядке (по естественному порядку или с помощью Comparator).",
   "since": "1.2",
   "characteristics": [
-    "Entries automatically sorted by key",
-    "Range-view operations",
-    "Endpoint access methods"
-  ]
+    "Ключи автоматически сортируются",
+    "Предоставляет методы для работы с диапазонами ключей",
+    "Позволяет получить первый/последний ключи",
+    "Не допускает null ключи при natural ordering"
+  ],
+  "usage": "Используется для ассоциативных массивов с сортировкой ключей. Основная реализация - TreeMap."
 }

@@ -1,10 +1,13 @@
 {
-  "description": "Hash table and linked list implementation of Map with predictable iteration order (insertion-order by default).",
+  "description": "Реализация Map, сохраняющая порядок вставки элементов (или порядок доступа). Сочетает хэш-таблицу и связный список для поддержания порядка.",
   "since": "1.4",
   "characteristics": [
-    "Maintains insertion order",
-    "Nearly as fast as HashMap",
-    "Can be configured for access-order",
-    "Not synchronized"
-  ]
+    "Может сохранять порядок вставки или порядок доступа",
+    "Производительность немного ниже, чем у HashMap",
+    "Итерация происходит по порядку элементов",
+    "Может использоваться для создания LRU-кэша",
+    "Разрешает один null ключ"
+  ],
+  "performance": "Немного медленнее HashMap из-за поддержания порядка, но быстрее TreeMap.",
+  "usage": "Используется, когда нужен HashMap с предсказуемым порядком итерации. Полезен для реализации LRU-кэшей."
 }

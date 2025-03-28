@@ -1,10 +1,13 @@
 {
-  "description": "Hash table based Map with weak keys. Entry is automatically removed when its key is no longer referenced.",
+  "description": "Реализация Map, использующая слабые ссылки (WeakReference) для ключей. Запись автоматически удаляется, когда ключ больше не используется.",
   "since": "1.2",
   "characteristics": [
-    "Weak references to keys",
-    "Useful for caches",
-    "Not thread-safe",
-    "Permits null keys and values"
-  ]
+    "Ключи хранятся как слабые ссылки",
+    "Автоматически удаляет записи при сборке мусора",
+    "Полезен для реализации кэшей",
+    "Не гарантирует порядок элементов",
+    "Разрешает null ключи и значения"
+  ],
+  "performance": "Схож с HashMap, но с накладными расходами на работу со слабыми ссылками.",
+  "usage": "Используется для реализации кэшей, где записи должны автоматически удаляться при неиспользовании ключей. Пример: кэш временных данных."
 }

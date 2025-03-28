@@ -1,10 +1,12 @@
 {
-  "description": "An ordered collection (sequence). Provides precise control over where each element is inserted and accessed by integer index.",
+  "description": "Упорядоченная коллекция (последовательность). Пользователь имеет точный контроль над позицией каждого элемента в списке. Элементы доступны по целочисленному индексу (позиции).",
   "since": "1.2",
   "characteristics": [
-    "Ordered collection",
-    "Allows duplicates",
-    "Positional access",
-    "Range-view operations"
-  ]
+    "Сохраняет порядок вставки элементов",
+    "Допускает дублирующиеся элементы",
+    "Доступ к элементам по индексу",
+    "Поддерживает операции с диапазонами",
+    "Может содержать null элементы"
+  ],
+  "usage": "Используется, когда важен порядок элементов или нужен доступ по индексу. Примеры: ArrayList для частого доступа, LinkedList для частых вставок/удалений."
 }

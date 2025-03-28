@@ -1,9 +1,11 @@
 {
-  "description": "A collection that contains no duplicate elements. Models the mathematical set abstraction.",
+  "description": "Коллекция, не содержащая дублирующихся элементов. Реализует математическую абстракцию множества. Содержит методы для основных операций над множествами (объединение, пересечение и т.д.).",
   "since": "1.2",
   "characteristics": [
-    "No duplicate elements",
-    "At most one null element",
-    "Mathematical set operations"
-  ]
+    "Гарантирует уникальность элементов",
+    "Максимум один null элемент",
+    "Может быть упорядоченным или неупорядоченным",
+    "Не поддерживает доступ по индексу"
+  ],
+  "usage": "Используется, когда нужно хранить уникальные элементы. HashSet для быстрого доступа, TreeSet для сортированного хранения, LinkedHashSet для сохранения порядка вставки."
 }

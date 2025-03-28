@@ -1,10 +1,13 @@
 {
-  "description": "Red-Black tree based NavigableSet implementation. Elements are ordered using natural ordering or Comparator.",
+  "description": "Реализация NavigableSet на основе красно-черного дерева. Элементы автоматически сортируются (по естественному порядку или Comparator).",
   "since": "1.2",
   "characteristics": [
-    "Elements automatically sorted",
-    "Log(n) time for basic operations",
-    "Implements NavigableSet",
-    "Not synchronized"
-  ]
+    "Элементы всегда отсортированы",
+    "Обеспечивает log(n) время для основных операций",
+    "Поддерживает все операции NavigableSet",
+    "Не разрешает null элементы при natural ordering",
+    "Использует TreeMap для хранения элементов"
+  ],
+  "performance": "Медленнее HashSet, но обеспечивает сортировку и дополнительные навигационные методы.",
+  "usage": "Используется, когда требуется множество с автоматической сортировкой элементов или нужны операции с диапазонами."
 }

@@ -1,10 +1,13 @@
 {
-  "description": "Hash table based implementation of the Set interface. Uses HashMap internally to store elements.",
+  "description": "Реализация множества на основе хэш-таблицы. Использует HashMap для хранения элементов. Обеспечивает постоянное время выполнения базовых операций при условии хорошей хэш-функции.",
   "since": "1.2",
   "characteristics": [
-    "Constant-time basic operations",
-    "No ordering guarantees",
-    "Permits null element",
-    "Not synchronized"
-  ]
+    "Быстрые операции добавления/удаления/поиска (O(1))",
+    "Не гарантирует порядок элементов",
+    "Разрешает один null элемент",
+    "Производительность зависит от качества hashCode()",
+    "Не синхронизирован"
+  ],
+  "performance": "Лучшая производительность среди реализаций Set, но без гарантий порядка.",
+  "usage": "Используется для хранения уникальных элементов, когда порядок не важен, а важна скорость операций."
 }

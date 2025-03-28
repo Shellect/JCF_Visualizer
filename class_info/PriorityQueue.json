@@ -1,10 +1,13 @@
 {
-  "description": "Unbounded priority queue based on a priority heap. Orders elements according to natural ordering or Comparator.",
+  "description": "Очередь с приоритетами на основе кучи (heap). Элементы упорядочиваются согласно их естественному порядку или Comparator, предоставленному при создании.",
   "since": "1.5",
   "characteristics": [
-    "Orders elements by priority",
-    "No capacity restrictions",
-    "Not thread-safe",
-    "Null elements not permitted"
-  ]
+    "Элементы обрабатываются по приоритету",
+    "Не имеет ограничения по размеру (автоматически растет)",
+    "Не поддерживает null элементы",
+    "Голова очереди - наименьший элемент",
+    "Не синхронизирована"
+  ],
+  "performance": "Вставка и удаление выполняются за O(log n), доступ к голове очереди - O(1).",
+  "usage": "Используется для планирования задач с приоритетами, алгоритмов типа Dijkstra, когда важен порядок обработки по приоритету."
 }

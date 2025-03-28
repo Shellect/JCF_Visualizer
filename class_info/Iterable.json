@@ -1,9 +1,11 @@
 {
-  "description": "The root interface for all collection classes. Implementing this interface allows an object to be the target of the 'for-each loop' statement.",
+  "description": "Базовый интерфейс для всех коллекций в Java. Позволяет объекту быть целью оператора 'for-each' цикла. Содержит единственный метод iterator(), который возвращает итератор для последовательного доступа к элементам коллекции.",
   "since": "1.5",
   "characteristics": [
-    "Base interface for all collections",
-    "Provides iterator() method",
-    "Required for enhanced for-loop"
-  ]
+    "Корневой интерфейс для всех коллекций",
+    "Определяет метод iterator() для последовательного доступа",
+    "Обязателен для использования в улучшенном for-цикле",
+    "Позволяет использовать метод forEach() с лямбда-выражениями"
+  ],
+  "usage": "Используется как базовый тип для всех коллекций. Все классы коллекций реализуют этот интерфейс, что обеспечивает единый способ перебора элементов."
 }

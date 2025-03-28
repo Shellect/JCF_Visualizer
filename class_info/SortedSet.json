@@ -1,9 +1,11 @@
 {
-  "description": "A Set that maintains its elements in ascending order according to natural ordering or a Comparator.",
+  "description": "Расширение интерфейса Set, которое поддерживает элементы в отсортированном порядке (по естественному порядку или с помощью Comparator).",
   "since": "1.2",
   "characteristics": [
-    "Elements automatically sorted",
-    "Range-view operations",
-    "Endpoint access methods"
-  ]
+    "Элементы автоматически сортируются",
+    "Предоставляет методы для работы с диапазонами",
+    "Позволяет получить первый/последний элементы",
+    "Не допускает null, если используется natural ordering"
+  ],
+  "usage": "Используется, когда требуется множество с автоматической сортировкой. Основная реализация - TreeSet."
 }

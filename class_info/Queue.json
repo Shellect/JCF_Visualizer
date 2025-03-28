@@ -1,9 +1,11 @@
 {
-  "description": "A collection designed for holding elements prior to processing. Typically orders elements in FIFO manner.",
+  "description": "Интерфейс очереди, представляющий коллекцию, предназначенную для хранения элементов перед обработкой. Обычно, но не обязательно, следует принципу FIFO (первый вошел - первый вышел).",
   "since": "1.5",
   "characteristics": [
-    "FIFO ordering typically",
-    "Insertion at end, removal at head",
-    "Additional operations for bounded queues"
-  ]
+    "Обычно реализует FIFO",
+    "Поддерживает операции вставки в конец и извлечения из начала",
+    "Может иметь ограниченную емкость",
+    "Предоставляет специальные методы для работы с ограниченными очередями"
+  ],
+  "usage": "Используется для реализации очередей задач, обработки событий, буферизации. Реализации: LinkedList как неограниченная очередь, ArrayDeque для стеков/очередей, PriorityQueue для приоритетного порядка."
 }

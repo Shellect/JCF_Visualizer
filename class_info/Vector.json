@@ -1,10 +1,13 @@
 {
-  "description": "Legacy synchronized resizable-array implementation of the List interface. Similar to ArrayList but thread-safe.",
+  "description": "Устаревшая синхронизированная реализация динамического массива. Аналог ArrayList, но с синхронизированными методами. В новых разработках рекомендуется использовать ArrayList или синхронизированные обертки из Collections.",
   "since": "1.0",
   "characteristics": [
-    "Thread-safe",
-    "Dynamic resizing",
-    "Legacy class",
-    "Synchronized methods"
-  ]
+    "Синхронизированные методы (потокобезопасность)",
+    "Динамически расширяемый массив",
+    "Медленнее ArrayList из-за синхронизации",
+    "Устаревший класс (legacy)",
+    "Входит в первоначальную версию Java"
+  ],
+  "performance": "Медленнее ArrayList из-за накладных расходов на синхронизацию.",
+  "usage": "Не рекомендуется для новых проектов. Используйте Collections.synchronizedList(new ArrayList<>()) вместо Vector."
 }

@@ -1,10 +1,12 @@
 {
-  "description": "Legacy LIFO stack implementation extending Vector. Provides push, pop and peek operations.",
+  "description": "Устаревший класс, реализующий структуру данных «стек» (LIFO — Last-In-First-Out). Наследуется от Vector, что делает его методы синхронизированными, но менее производительными по сравнению с современными альтернативами.",
   "since": "1.0",
   "characteristics": [
-    "LIFO (Last-In-First-Out) structure",
-    "Extends Vector",
-    "Legacy class",
-    "Better alternatives exist (Deque)"
-  ]
+    "Реализует принцип LIFO (последний вошел — первый вышел)",
+    "Основные операции: push() (добавление), pop() (извлечение), peek() (просмотр верхнего элемента)",
+    "Синхронизированные методы (потокобезопасность)",
+    "Медленнее ArrayDeque из-за наследования от Vector",
+    "Устаревший (legacy) класс — не рекомендуется к использованию"
+  ],
+  "usage": "В новых проектах **лучше заменить на ArrayDeque**: \n```java\nDeque<T> stack = new ArrayDeque<>();\n``` \nПричины: \n- ArrayDeque не синхронизирован, но быстрее. \n- Для потокобезопасности используйте: \n```java\nDeque<T> safeStack = Collections.synchronizedDeque(new ArrayDeque<>());\n``` \nStack сохраняется только для обратной совместимости."
 }

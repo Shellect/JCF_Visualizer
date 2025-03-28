@@ -1,10 +1,13 @@
 {
-  "description": "Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations.",
+  "description": "Реализация списка на основе двусвязного списка. Реализует одновременно интерфейсы List и Deque. Эффективна для частых вставок/удалений, но менее эффективна для произвольного доступа.",
   "since": "1.2",
   "characteristics": [
-    "Good for frequent insertions/deletions",
-    "Implements both List and Deque",
-    "Slow random access",
-    "Not synchronized"
-  ]
+    "Быстрые вставки/удаления (O(1))",
+    "Медленный доступ по индексу (O(n))",
+    "Реализует как List, так и Deque",
+    "Требует больше памяти для хранения связей",
+    "Не синхронизирован"
+  ],
+  "performance": "Эффективна для частых изменений структуры, но не для произвольного доступа.",
+  "usage": "Используется, когда важнее частое изменение списка (вставки/удаления), чем доступ по индексу."
 }

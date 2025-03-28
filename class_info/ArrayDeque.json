@@ -1,10 +1,13 @@
 {
-  "description": "Resizable-array implementation of the Deque interface. More efficient than Stack when used as a stack.",
+  "description": "Реализация Deque на основе массива с изменяемым размером. Более эффективная альтернатива Stack и LinkedList при использовании в качестве стека или очереди.",
   "since": "1.6",
   "characteristics": [
-    "No capacity restrictions",
-    "Faster than Stack and LinkedList",
-    "Not thread-safe",
-    "Null elements not permitted"
-  ]
+    "Нет ограничений по емкости (автоматически растет)",
+    "Быстрее Stack при использовании как стека",
+    "Быстрее LinkedList при использовании как очереди",
+    "Не поддерживает null элементы",
+    "Не синхронизирована"
+  ],
+  "performance": "Лучшая производительность среди реализаций Deque. Все операции выполняются за амортизированное O(1).",
+  "usage": "Рекомендуемая реализация для стеков (вместо Stack) и очередей (когда не нужны операции List)."
 }

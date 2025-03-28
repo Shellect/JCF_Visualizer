@@ -4,9 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import org.commonmark.parser.Parser;
+import org.commonmark.renderer.html.HtmlRenderer;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
+import javax.swing.text.html.HTMLEditorKit;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -16,13 +19,14 @@ import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class CollectionFrameworkVisualizer extends JFrame {
 
     public CollectionFrameworkVisualizer() {
         setTitle("Java Collection Framework Visualizer");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1000, 700);
+        setSize(1300, 900);
         setLocationRelativeTo(null);
 
         // Создаем панель для отображения иерархии
@@ -33,7 +37,7 @@ public class CollectionFrameworkVisualizer extends JFrame {
         setVisible(true);
     }
 
-    private class HierarchyPanel extends JPanel {
+    private static class HierarchyPanel extends JPanel {
         private static final int BOX_WIDTH = 180;
         private static final int BOX_HEIGHT = 40;
 
@@ -42,14 +46,12 @@ public class CollectionFrameworkVisualizer extends JFrame {
 
         public HierarchyPanel() {
             setLayout(null);
-            setPreferredSize(new Dimension(900, 1200));
+            setPreferredSize(new Dimension(1300, 900));
             setBackground(new Color(240, 240, 240));
 
             try {
                 // Читаем JSON-файл
-                String jsonContent = new String(Files.readAllBytes(Paths.get("collections_hierarchy.json")));
-                Gson gson = new Gson();
-                JsonObject jsonObject = gson.fromJson(jsonContent, JsonObject.class);
+                JsonObject jsonObject = loadJsonData();
 
                 // Загрузка групп
                 JsonArray groups = jsonObject.getAsJsonArray("groups");
@@ -126,6 +128,13 @@ public class CollectionFrameworkVisualizer extends JFrame {
             }
         }
 
+        private static JsonObject loadJsonData() throws IOException {
+            String jsonContent = new String(Files.readAllBytes(Paths.get("collections_hierarchy.json")));
+            Gson gson = new Gson();
+            JsonObject jsonObject = gson.fromJson(jsonContent, JsonObject.class);
+            return jsonObject;
+        }
+
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -169,6 +178,8 @@ public class CollectionFrameworkVisualizer extends JFrame {
         String description;
         String since;
         String[] characteristics;
+        String usage;
+        String performance;
 
         static ClassInfo load(String className) {
             try {
@@ -182,13 +193,9 @@ public class CollectionFrameworkVisualizer extends JFrame {
         }
     }
 
-    private class ClassBox extends JPanel {
-        private final String className;
+    private static class ClassBox extends JPanel {
 
-        public ClassBox(String className, int x, int y, int width, int height,
-                        boolean isInterface, Color groupColor) {
-            this.className = className;
-
+        public ClassBox(String className, int x, int y, int width, int height, boolean isInterface, Color groupColor) {
             setBounds(x, y, width, height);
             setBorder(BorderFactory.createCompoundBorder(
                     new LineBorder(Color.BLACK, 1),
@@ -244,66 +251,19 @@ public class CollectionFrameworkVisualizer extends JFrame {
 
                 JDialog dialog = new JDialog();
                 dialog.setTitle("Details: " + className);
-                dialog.setSize(600, 700);
-                dialog.setLocationRelativeTo(null);
+                dialog.setSize(700, 800);
 
-                JTextArea textArea = new JTextArea();
-                textArea.setEditable(false);
-                textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+                // Используем JEditorPane вместо JTextArea для поддержки HTML
+                JEditorPane editorPane = new JEditorPane();
+                editorPane.setEditable(false);
+                editorPane.setContentType("text/html");
+                editorPane.setEditorKit(new HTMLEditorKit());
 
-                // Добавляем основную информацию
-                textArea.append((clazz.isInterface() ? "INTERFACE\n" : "CLASS\n"));
-                textArea.append("Package: java.util\n");
-                textArea.append("Since: " + (classInfo.since != null ? classInfo.since : "N/A") + "\n\n");
+                // Генерация HTML из Markdown-описаний
+                String htmlContent = generateHtmlContent(clazz, classInfo);
+                editorPane.setText(htmlContent);
 
-                // Добавляем описание
-                if (classInfo.description != null) {
-                    textArea.append("Description:\n");
-                    textArea.append(wrapText(classInfo.description, 80) + "\n\n");
-                }
-
-                // Добавляем характеристики
-                if (classInfo.characteristics != null && classInfo.characteristics.length > 0) {
-                    textArea.append("Characteristics:\n");
-                    for (String ch : classInfo.characteristics) {
-                        textArea.append(" • " + ch + "\n");
-                    }
-                    textArea.append("\n");
-                }
-
-                // Добавляем методы
-                textArea.append("Methods:\n");
-                Method[] methods = clazz.getDeclaredMethods();
-                Arrays.sort(methods, Comparator.comparing(Method::getName));
-
-                for (Method method : methods) {
-                    if (Modifier.isPublic(method.getModifiers())) {
-                        textArea.append("  " + Modifier.toString(method.getModifiers() & Modifier.methodModifiers()) + " ");
-                        textArea.append(method.getReturnType().getSimpleName() + " ");
-                        textArea.append(method.getName() + "(");
-
-                        Class<?>[] params = method.getParameterTypes();
-                        for (int i = 0; i < params.length; i++) {
-                            textArea.append(params[i].getSimpleName());
-                            if (i < params.length - 1) textArea.append(", ");
-                        }
-                        textArea.append(")\n");
-                    }
-                }
-
-                // Добавляем поля (для классов)
-                if (!clazz.isInterface()) {
-                    textArea.append("\nFields:\n");
-                    Arrays.stream(clazz.getDeclaredFields())
-                            .filter(f -> Modifier.isPublic(f.getModifiers()))
-                            .forEach(f -> {
-                                textArea.append("  " + Modifier.toString(f.getModifiers() & Modifier.fieldModifiers()) + " ");
-                                textArea.append(f.getType().getSimpleName() + " ");
-                                textArea.append(f.getName() + "\n");
-                            });
-                }
-
-                JScrollPane scrollPane = new JScrollPane(textArea);
+                JScrollPane scrollPane = new JScrollPane(editorPane);
                 dialog.add(scrollPane);
                 dialog.setVisible(true);
 
@@ -313,21 +273,64 @@ public class CollectionFrameworkVisualizer extends JFrame {
             }
         }
 
-        private String wrapText(String text, int width) {
-            StringBuilder wrapped = new StringBuilder();
-            String[] words = text.split(" ");
-            int lineLength = 0;
+        private String generateHtmlContent(Class<?> clazz, ClassInfo classInfo) {
+            // Конвертируем Markdown в HTML
+            Parser parser = Parser.builder().build();
+            HtmlRenderer renderer = HtmlRenderer.builder().build();
 
-            for (String word : words) {
-                if (lineLength + word.length() > width) {
-                    wrapped.append("\n");
-                    lineLength = 0;
-                }
-                wrapped.append(word).append(" ");
-                lineLength += word.length() + 1;
+            StringBuilder html = new StringBuilder("<html><body style='font-family: Arial; padding: 10px'>");
+
+            // Заголовок
+            html.append("<h2>").append(clazz.isInterface() ? "INTERFACE" : "CLASS").append("</h2>");
+            html.append("<p><b>Package:</b> java.util<br>");
+            html.append("<b>Since Java:</b> ").append(classInfo.since != null ? classInfo.since : "N/A").append("</p>");
+
+            // Описание (Markdown -> HTML)
+            if (classInfo.description != null) {
+                html.append("<h3>DESCRIPTION</h3>");
+                html.append(renderer.render(parser.parse(classInfo.description)));
             }
 
-            return wrapped.toString();
+            // Характеристики
+            if (classInfo.characteristics != null && classInfo.characteristics.length > 0) {
+                html.append("<h3>CHARACTERISTICS</h3><ul>");
+                for (String ch : classInfo.characteristics) {
+                    html.append("<li>").append(ch).append("</li>");
+                }
+                html.append("</ul>");
+            }
+
+            // Использование (Markdown -> HTML)
+            if (classInfo.usage != null) {
+                html.append("<h3>USAGE</h3>");
+                html.append(renderer.render(parser.parse(classInfo.usage)));
+            }
+
+            // Производительность
+            if (classInfo.performance != null) {
+                html.append("<h3>PERFORMANCE</h3>");
+                html.append(renderer.render(parser.parse(classInfo.performance)));
+            }
+
+            // Методы
+            html.append("<h3>PUBLIC METHODS</h3><pre>");
+            Method[] methods = clazz.getDeclaredMethods();
+            Arrays.sort(methods, Comparator.comparing(Method::getName));
+            for (Method method : methods) {
+                if (Modifier.isPublic(method.getModifiers())) {
+                    html.append(Modifier.toString(method.getModifiers() & Modifier.methodModifiers())).append(" ");
+                    html.append(method.getReturnType().getSimpleName()).append(" ");
+                    html.append(method.getName()).append("(");
+                    html.append(Arrays.stream(method.getParameterTypes())
+                            .map(Class::getSimpleName)
+                            .collect(Collectors.joining(", ")));
+                    html.append(")<br>");
+                }
+            }
+            html.append("</pre>");
+
+            html.append("</body></html>");
+            return html.toString();
         }
     }
 

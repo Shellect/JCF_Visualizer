@@ -1,9 +1,11 @@
 {
-  "description": "A SortedSet extended with navigation methods reporting closest matches for given search targets.",
+  "description": "Расширение SortedSet с методами навигации, возвращающими ближайшие совпадения для заданных целей поиска. Позволяет обходить элементы в обратном порядке.",
   "since": "1.6",
   "characteristics": [
-    "Extends SortedSet",
-    "Closest-match navigation methods",
-    "Can be accessed in descending order"
-  ]
+    "Наследует все возможности SortedSet",
+    "Добавляет методы для поиска ближайших элементов",
+    "Позволяет обходить элементы в обратном порядке",
+    "Поддерживает обрезку (trimming) множества"
+  ],
+  "usage": "Используется для сложных операций поиска в отсортированных множествах. Основная реализация - TreeSet."
 }

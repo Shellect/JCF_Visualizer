@@ -1,10 +1,13 @@
 {
-  "description": "Hash table and linked list implementation of Set interface with predictable iteration order.",
+  "description": "Реализация Set, которая сохраняет порядок вставки элементов. Сочетает хэш-таблицу для хранения элементов и связный список для поддержания порядка итерации.",
   "since": "1.4",
   "characteristics": [
-    "Maintains insertion order",
-    "Nearly as fast as HashSet",
-    "Slightly higher memory usage",
-    "Not synchronized"
-  ]
+    "Сохраняет порядок вставки элементов",
+    "Производительность немного ниже, чем у HashSet",
+    "Требует немного больше памяти, чем HashSet",
+    "Не синхронизирована",
+    "Разрешает один null элемент"
+  ],
+  "performance": "Немного медленнее HashSet из-за поддержания порядка, но быстрее TreeSet.",
+  "usage": "Используется, когда нужно множество с уникальными элементами, но с сохранением порядка вставки. Хорош для LRU-кэшей."
 }
